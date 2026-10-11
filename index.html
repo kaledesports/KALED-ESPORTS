@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaled Esports - Web Oficial</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background-color: #0b0e14;
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+
+    /* Navbar Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(2, 6, 23, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #1e293b;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+    }
+    .logo-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+      background: #0f172a;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+    .logo-fallback { color: #60a5fa; font-size: 28px; font-weight: 900; }
+    .brand-title {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+    .brand-title span {
+      color: #3b82f6;
+    }
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+    .nav-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 14px;
+    }
+    .nav-links a:hover {
+      color: #60a5fa;
+    }
+    .btn-x {
+      background: #2563eb;
+      color: #ffffff;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+      font-size: 14px;
+    }
+    .btn-x:hover {
+      background: #3b82f6;
+    }
+
+    /* Hero Banner */
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      background: radial-gradient(circle at 50% 20%, rgba(59, 130, 246, 0.15) 0%, rgba(11, 14, 20, 0) 70%);
+    }
+    .hero-logo {
+      width: 130px;
+      height: 130px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid rgba(59, 130, 246, 0.4);
+      box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
+      margin: 0 auto 24px auto;
+      background: #0f172a;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+    .hero-logo .logo-fallback { font-size: 80px; }
+    .badge {
+      display: inline-block;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(30, 58, 138, 0.6);
+      color: #60a5fa;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+    .hero h1 span {
+      background: linear-gradient(to right, #60a5fa, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      color: #94a3b8;
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto 35px auto;
+    }
+
+    /* Filtros */
+    .filter-group {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .filter-btn {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid #334155;
+      color: #cbd5e1;
+      padding: 10px 22px;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .filter-btn:hover { background: #334155; }
+    .filter-btn.active {
+      background: #1e293b;
+      color: #ffffff;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 2px #3b82f6;
+    }
+    .filter-btn.btn-player { color: #60a5fa; border-color: rgba(30, 58, 138, 0.6); }
+    .filter-btn.btn-creator { color: #f87171; border-color: rgba(153, 27, 27, 0.6); }
+    .filter-btn.btn-coach { color: #34d399; border-color: rgba(6, 78, 59, 0.6); }
+    .filter-btn.btn-staff { color: #c084fc; border-color: rgba(88, 28, 135, 0.6); }
+
+    /* Roster Grid */
+    .roster-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px 80px 20px;
+      width: 100%;
+      flex-grow: 1;
+    }
+    .section-header { margin-bottom: 30px; }
+    .section-header h2 { font-size: 32px; text-transform: uppercase; font-weight: 800; }
+    .section-header h2 span { color: #3b82f6; }
+    .section-header p { color: #94a3b8; font-size: 14px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: rgba(18, 24, 38, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card.player { border-top: 3px solid #3b82f6; box-shadow: 0 4px 20px -5px rgba(59, 130, 246, 0.3); }
+    .card.creator { border-top: 3px solid #ef4444; box-shadow: 0 4px 20px -5px rgba(239, 68, 68, 0.3); }
+    .card.coach { border-top: 3px solid #10b981; box-shadow: 0 4px 20px -5px rgba(16, 185, 129, 0.3); }
+    .card.ceo { border-top: 3px solid #f59e0b; box-shadow: 0 4px 20px -5px rgba(245, 158, 11, 0.3); }
+    .card.owner { border-top: 3px solid #6b7280; box-shadow: 0 4px 20px -5px rgba(107, 114, 128, 0.3); }
+
+    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .role-tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid;
+    }
+    .tag-player { background: rgba(59, 130, 246, 0.1); color: #60a5fa; border-color: rgba(59, 130, 246, 0.3); }
+    .tag-creator { background: rgba(239, 68, 68, 0.1); color: #f87171; border-color: rgba(239, 68, 68, 0.3); }
+    .tag-coach { background: rgba(16, 185, 129, 0.1); color: #34d399; border-color: rgba(16, 185, 129, 0.3); }
+    .tag-ceo { background: rgba(245, 158, 11, 0.1); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3); }
+    .tag-owner { background: rgba(107, 114, 128, 0.1); color: #cbd5e1; border-color: rgba(107, 114, 128, 0.3); }
+
+    .avatar-box {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 12px auto;
+      border: 2px solid #334155;
+      background: #0f172a;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .avatar-initial {
+      font-size: 36px;
+      font-weight: 800;
+      color: #60a5fa;
+      text-transform: uppercase;
+    }
+    .avatar-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .member-name { font-size: 24px; font-weight: 800; text-transform: uppercase; text-align: center; margin-bottom: 2px; color: #ffffff; }
+    .member-sub { font-size: 12px; color: #94a3b8; text-align: center; display: block; margin-bottom: 16px; }
+
+    .card-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: #1e293b;
+      color: #ffffff;
+      padding: 10px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      border: 1px solid #334155;
+    }
+    .card-btn:hover { background: #2563eb; border-color: #2563eb; }
+
+    .about-section {
+      background: rgba(2, 6, 23, 0.6);
+      border-top: 1px solid #1e293b;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .about-section h2 { font-size: 36px; margin-bottom: 16px; text-transform: uppercase; font-weight: 800; }
+    .about-section p { color: #94a3b8; max-width: 700px; margin: 0 auto 30px auto; line-height: 1.6; }
+
+    footer {
+      background: #020617;
+      border-top: 1px solid #0f172a;
+      padding: 24px 20px;
+      text-align: center;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    @media (max-width: 640px) {
+      .nav-container {
+        height: auto;
+        flex-direction: column;
+        gap: 14px;
+        padding: 14px 16px;
+      }
+      .brand-title { font-size: 22px; }
+      .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+      .hero { padding: 44px 16px; }
+      .hero h1 {
+        font-size: clamp(30px, 8vw, 42px);
+        letter-spacing: 1px;
+      }
+      .hero p { font-size: 16px; }
+      .roster-section { padding: 32px 16px 56px; }
+      .grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); }
+      .section-header h2,
+      .about-section h2 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="nav-container">
+      <div class="logo-group" onclick="filterMembers('all')">
+        <div class="logo-box">
+          <span class="logo-fallback" aria-hidden="true">K</span>
+          <img src="https://unavatar.io/x/KaledEsports" alt="Logo" onerror="this.remove();">
+        </div>
+        <div class="brand-title">Kaled <span>Esports</span></div>
+      </div>
+      <div class="nav-links">
+        <a href="#roster">Roster</a>
+        <a href="#about">Sobre Nosotros</a>
+      </div>
+      <a href="https://x.com/KaledEsports" target="_blank" rel="noopener noreferrer" class="btn-x">@KaledEsports</a>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="hero-logo">
+      <span class="logo-fallback" aria-hidden="true">K</span>
+      <img src="https://unavatar.io/x/KaledEsports" alt="Kaled Shield" onerror="this.remove();">
+    </div>
+    <div class="badge">Fortnite Competitive Division</div>
+    <h1>Dominando el <span>Campo de Batalla</span></h1>
+    <p>Bienvenido a la página oficial de Kaled Esports. Conoce a nuestros jugadores, creadores, coach y directiva.</p>
+
+    <!-- Filtros -->
+    <div class="filter-group">
+      <button onclick="filterMembers('all', event)" class="filter-btn active">Todos</button>
+      <button onclick="filterMembers('player', event)" class="filter-btn btn-player">Players</button>
+      <button onclick="filterMembers('creator', event)" class="filter-btn btn-creator">Creadores</button>
+      <button onclick="filterMembers('coach', event)" class="filter-btn btn-coach">Coach</button>
+      <button onclick="filterMembers('staff', event)" class="filter-btn btn-staff">Directiva</button>
+    </div>
+  </section>
+
+  <!-- Roster Section -->
+  <section id="roster" class="roster-section">
+    <div class="section-header">
+      <h2>Integrantes del <span>Equipo</span></h2>
+      <p>Haz clic en el enlace para visitar sus perfiles oficiales en X (Twitter).</p>
+    </div>
+
+    <div class="grid">
+
+      <!-- Amanuel -->
+      <div class="card player member-card player">
+        <div>
+          <div class="card-header">
+            <span class="role-tag tag-player">Player</span>
+          </div>
+          <div class="avatar-box">
+            <span class="avatar-initial">A</span>
+            <img src="https://unavatar.io/x/amanuel307_" alt="Amanuel" onerror="this.remove();">
+          </div>
+          <div class="member-name">Amanuel</div>
+          <span class="member-sub">Kaled Esports</span>
+        </div>
+        <a href="https://x.com/amanuel307_" target="_blank" rel="noopener noreferrer" class="card-btn">Ver perfil en X</a>
+      </div>
+
+      <!-- Legoshi -->
+      <div class="card player member-card player">
+        <div>
+          <div class="card-header">
+            <span class="role-tag tag-player">Player</span>
+          </div>
+          <div class="avatar-box">
+            <span class="avatar-initial">L</span>
+            <img src="https://unavatar.io/x/Ventus_SKN" alt="Legoshi" onerror="this.remove();">
+          </div>
+          <div class="member-name">Legoshi</div>
+          <span class="member-sub">Kaled Esports</span>
+        </div>
+        <a href="https://x.com/Ventus_SKN" target="_blank" rel="noopener noreferrer" class="card-btn">Ver perfil en X</a>
+      </div>
+
+      <!-- Makoo -->
+      <div class="card player member-card player">
+        <div>
+          <div class="card-header">
+            <span class="role-tag tag-player">Player</span>
+          </div>
+          <div class="avatar-box">
+            <span class="avatar-initial">M</span>
+            <img src="https://unavatar.io/x/Makoo_fn" alt="Makoo" onerror="this.remove();">
+          </div>
+          <div class="member-name">Makoo</div>
+          <span class="member-sub">Kaled Esports</span>
+        </div>
+        <a href="https://x.com/Makoo_fn" target="_blank" rel="noopener noreferrer" class="card-btn">Ver perfil en X</a>
+      </div>
+
+      <!-- Ochando -->
+      <div class="card player member-card player">
+        <div>
+          <div class="card-header">
+            <span class="role-tag tag-player">Player</span>
+          </div>
+          <div class="avatar-box">
+            <span class="avatar-initial">O</span>
+            <img src="https://unavatar.io/x/ochaando_" alt="Ochando" onerror="this.remove();">
+          </div>
+          <div class="member-name">Ochando</div>
+          <span class="member-sub">Kaled Esports</span>
+        </div>
+        <a href="https://x.com/ochaando_" target="_blank" rel="noopener noreferrer" class="card-btn">Ver perfil en X</a>
+      </div>
+
+      <!-- Swaay -->
+      <div class="card player member-card player">
+        <div>
+          <div class="card-header">
+            <span class="role-tag tag-player">Player</span>
+          </div>
+          <div class="avatar-box">
+            <span class="avatar-initial">S</span>
+            <img src="https://unavatar.io/x/Swaayfn" alt="Swaay" onerror="this.remove();">
+          </div>
+          <div class="member-name">Swaay</div>
+          <span class="member-sub">Kaled Esports</span>
+        </div>
+        <a href="https://x.com/Swaayfn" target="_blank" rel="noopener noreferrer" class="card-btn">Ver perfil en X</a>
+      </div>
+
+      <!-- Klonzz -->
+      <div class="card creator member-card creator">
+        <div>
+          <div class="card-header">
+            <span class="role-tag tag-creator">Creador de Contenido</span>
+          </div>
+          <div class="avatar-box">
+            <span class="avatar-initial" style="color:#f87171">K</span>
+            <img src="https://unavatar.io/x/klonzz_" alt="Klonzz" onerror="this.remove();">
+          </div>
+          <div class="member-name">Klonzz</div>
+          <span class="member-sub">Kaled Esports</span>
+        </div>
+        <a href="https://x.com/klonzz_" target="_blank" rel="noopener noreferrer" class="card-btn">Ver perfil en X</a>
+      </div>
+
+      <!-- Pollo (Coach) -->
+      <div class="card coach member-card coach">
+        <div>
+          <div class="card-header">
+            <span class="role-tag tag-coach">Coach</span>
+          </div>
+          <div class="avatar-box">
+            <span class="avatar-initial" style="color:#34d399">P</span>
+            <img src="https://unavatar.io/x/CoachPollo7" alt="Pollo" onerror="this.remove();">
+          </div>
+          <div class="member-name">Pollo</div>
+          <span class="member-sub">Kaled Esports</span>
+        </div>
+        <a href="https://x.com/CoachPollo7" target="_blank" rel="noopener noreferrer" class="card-btn">Ver perfil en X</a>
+      </div>
+
+      <!-- Sammy (CEO) -->
+      <div class="card ceo member-card staff">
+        <div>
+          <div class="card-header">
+            <span class="role-tag tag-ceo">CEO</span>
+          </div>
+          <div class="avatar-box">
+            <span class="avatar-initial" style="color:#fbbf24">S</span>
+            <img src="https://unavatar.io/x/saammyFN" alt="Sammy" onerror="this.remove();">
+          </div>
+          <div class="member-name">Sammy</div>
+          <span class="member-sub">Kaled Esports</span>
+        </div>
+        <a href="https://x.com/saammyFN" target="_blank" rel="noopener noreferrer" class="card-btn">Ver perfil en X</a>
+      </div>
+
+      <!-- Lukario (Owner) -->
+      <div class="card owner member-card staff">
+        <div>
+          <div class="card-header">
+            <span class="role-tag tag-owner">Owner</span>
+          </div>
+          <div class="avatar-box">
+            <span class="avatar-initial" style="color:#cbd5e1">L</span>
+            <img src="https://unavatar.io/x/Luk4rioFn" alt="Lukario" onerror="this.remove();">
+          </div>
+          <div class="member-name">Lukario</div>
+          <span class="member-sub">Kaled Esports</span>
+        </div>
+        <a href="https://x.com/Luk4rioFn" target="_blank" rel="noopener noreferrer" class="card-btn">Ver perfil en X</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <h2>Sobre Kaled Esports</h2>
+    <p>Kaled Esports es un club competitivo enfocado en destacar en los torneos más relevantes de Fortnite. Nuestro objetivo es el rendimiento de alto nivel, el trabajo en equipo y la creación de contenido de calidad.</p>
+    <a href="https://x.com/KaledEsports" target="_blank" rel="noopener noreferrer" class="btn-x">Síguenos en @KaledEsports</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2026 Kaled Esports. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    function filterMembers(role, evt) {
+      const cards = document.querySelectorAll('.member-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      
+      const targetBtn = evt ? evt.target : document.querySelector('.filter-btn');
+      if (targetBtn) targetBtn.classList.add('active');
+
+      cards.forEach(card => {
+        if (role === 'all' || card.classList.contains(role)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
