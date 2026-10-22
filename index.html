@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaled Esports - Web Oficial</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="nav-container">
+      <div class="logo-group" onclick="filterMembers('all')">
+        <div class="logo-box">
+          <img src="kaled.jpg" alt="Logo" onerror="this.onerror=null; this.src='https://unavatar.io/x/KaledEsports';">
+        </div>
+        <div class="brand-title">Kaled <span>Esports</span></div>
+      </div>
+      <div class="nav-links">
+        <a href="#roster">Roster</a>
+        <a href="#about">Sobre Nosotros</a>
+      </div>
+      <a href="https://x.com/KaledEsports" target="_blank" rel="noopener noreferrer" class="btn-x">@KaledEsports</a>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="hero-logo">
+      <img src="img/kaled.jpg" alt="Kaled Shield" onerror="this.onerror=null; this.src='https://unavatar.io/x/KaledEsports';">
+    </div>
+    <div class="badge">Fortnite Competitive Division</div>
+    <h1>Dominando el <span>Campo de Batalla</span></h1>
+    <p>Bienvenido a la página oficial de Kaled Esports. Conoce a nuestros jugadores, creadores, coach y directiva.</p>
+
+    <!-- Filtros -->
+    <div class="filter-group">
+      <button onclick="filterMembers('all', event)" class="filter-btn active">Todos</button>
+      <button onclick="filterMembers('player', event)" class="filter-btn btn-player">Players</button>
+      <button onclick="filterMembers('creator', event)" class="filter-btn btn-creator">Creadores</button>
+      <button onclick="filterMembers('coach', event)" class="filter-btn btn-coach">Coach</button>
+      <button onclick="filterMembers('staff', event)" class="filter-btn btn-staff">Directiva</button>
+    </div>
+  </section>
+
+  <!-- Roster Section -->
+  <section id="roster" class="roster-section">
+    <div class="section-header">
+      <h2>Integrantes del <span>Equipo</span></h2>
+      <p>Haz clic en el enlace para visitar sus perfiles oficiales en X (Twitter).</p>
+    </div>
+
+    <div class="grid">
+
+      <!-- Amanuel -->
+      <div class="card player member-card player">
+        <div>
+          <div class="card-header">
+            <span class="role-tag tag-player">Player</span>
+          </div>
+          <div class="avatar-box">
+            <span class="avatar-initial">A</span>
+            <img src="https://unavatar.io/x/amanuel307_" alt="Amanuel" onerror="this.remove();">
+          </div>
+          <div class="member-name">Amanuel</div>
+          <span class="member-sub">Kaled Esports</span>
+        </div>
+        <a href="https://x.com/amanuel307_" target="_blank" rel="noopener noreferrer" class="card-btn">Ver perfil en X</a>
+      </div>
+
+      <!-- Legoshi -->
+      <div class="card player member-card player">
+        <div>
+          <div class="card-header">
+            <span class="role-tag tag-player">Player</span>
+          </div>
+          <div class="avatar-box">
+            <span class="avatar-initial">L</span>
+            <img src="https://unavatar.io/x/Ventus_SKN" alt="Legoshi" onerror="this.remove();">
+          </div>
+          <div class="member-name">Legoshi</div>
+          <span class="member-sub">Kaled Esports</span>
+        </div>
+        <a href="https://x.com/Ventus_SKN" target="_blank" rel="noopener noreferrer" class="card-btn">Ver perfil en X</a>
+      </div>
+
+      <!-- Makoo -->
+      <div class="card player member-card player">
+        <div>
+          <div class="card-header">
+            <span class="role-tag tag-player">Player</span>
+          </div>
+          <div class="avatar-box">
+            <span class="avatar-initial">M</span>
+            <img src="https://unavatar.io/x/Makoo_fn" alt="Makoo" onerror="this.remove();">
+          </div>
+          <div class="member-name">Makoo</div>
+          <span class="member-sub">Kaled Esports</span>
+        </div>
+        <a href="https://x.com/Makoo_fn" target="_blank" rel="noopener noreferrer" class="card-btn">Ver perfil en X</a>
+      </div>
+
+      <!-- Ochando -->
+      <div class="card player member-card player">
+        <div>
+          <div class="card-header">
+            <span class="role-tag tag-player">Player</span>
+          </div>
+          <div class="avatar-box">
+            <span class="avatar-initial">O</span>
+            <img src="https://unavatar.io/x/ochaando_" alt="Ochando" onerror="this.remove();">
+          </div>
+          <div class="member-name">Ochando</div>
+          <span class="member-sub">Kaled Esports</span>
+        </div>
+        <a href="https://x.com/ochaando_" target="_blank" rel="noopener noreferrer" class="card-btn">Ver perfil en X</a>
+      </div>
+
+      <!-- Swaay -->
+      <div class="card player member-card player">
+        <div>
+          <div class="card-header">
+            <span class="role-tag tag-player">Player</span>
+          </div>
+          <div class="avatar-box">
+            <span class="avatar-initial">S</span>
+            <img src="https://unavatar.io/x/Swaayfn" alt="Swaay" onerror="this.remove();">
+          </div>
+          <div class="member-name">Swaay</div>
+          <span class="member-sub">Kaled Esports</span>
+        </div>
+        <a href="https://x.com/Swaayfn" target="_blank" rel="noopener noreferrer" class="card-btn">Ver perfil en X</a>
+      </div>
+
+      <!-- Klonzz -->
+      <div class="card creator member-card creator">
+        <div>
+          <div class="card-header">
+            <span class="role-tag tag-creator">Creador de Contenido</span>
+          </div>
+          <div class="avatar-box">
+            <span class="avatar-initial" style="color:#f87171">K</span>
+            <img src="https://unavatar.io/x/klonzz_" alt="Klonzz" onerror="this.remove();">
+          </div>
+          <div class="member-name">Klonzz</div>
+          <span class="member-sub">Kaled Esports</span>
+        </div>
+        <a href="https://x.com/klonzz_" target="_blank" rel="noopener noreferrer" class="card-btn">Ver perfil en X</a>
+      </div>
+
+      <!-- Pollo (Coach) -->
+      <div class="card coach member-card coach">
+        <div>
+          <div class="card-header">
+            <span class="role-tag tag-coach">Coach</span>
+          </div>
+          <div class="avatar-box">
+            <span class="avatar-initial" style="color:#34d399">P</span>
+            <img src="https://unavatar.io/x/CoachPollo7" alt="Pollo" onerror="this.remove();">
+          </div>
+          <div class="member-name">Pollo</div>
+          <span class="member-sub">Kaled Esports</span>
+        </div>
+        <a href="https://x.com/CoachPollo7" target="_blank" rel="noopener noreferrer" class="card-btn">Ver perfil en X</a>
+      </div>
+
+      <!-- Sammy (CEO) -->
+      <div class="card ceo member-card staff">
+        <div>
+          <div class="card-header">
+            <span class="role-tag tag-ceo">CEO</span>
+          </div>
+          <div class="avatar-box">
+            <span class="avatar-initial" style="color:#fbbf24">S</span>
+            <img src="https://unavatar.io/x/saammyFN" alt="Sammy" onerror="this.remove();">
+          </div>
+          <div class="member-name">Sammy</div>
+          <span class="member-sub">Kaled Esports</span>
+        </div>
+        <a href="https://x.com/saammyFN" target="_blank" rel="noopener noreferrer" class="card-btn">Ver perfil en X</a>
+      </div>
+
+      <!-- Lukario (Owner) -->
+      <div class="card owner member-card staff">
+        <div>
+          <div class="card-header">
+            <span class="role-tag tag-owner">Owner</span>
+          </div>
+          <div class="avatar-box">
+            <span class="avatar-initial" style="color:#cbd5e1">L</span>
+            <img src="https://unavatar.io/x/Luk4rioFn" alt="Lukario" onerror="this.remove();">
+          </div>
+          <div class="member-name">Lukario</div>
+          <span class="member-sub">Kaled Esports</span>
+        </div>
+        <a href="https://x.com/Luk4rioFn" target="_blank" rel="noopener noreferrer" class="card-btn">Ver perfil en X</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <h2>Sobre Kaled Esports</h2>
+    <p>Kaled Esports es un club competitivo enfocado en destacar en los torneos más relevantes de Fortnite. Nuestro objetivo es el rendimiento de alto nivel, el trabajo en equipo y la creación de contenido de calidad.</p>
+    <a href="https://x.com/KaledEsports" target="_blank" rel="noopener noreferrer" class="btn-x">Síguenos en @KaledEsports</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2026 Kaled Esports. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    function filterMembers(role, evt) {
+      const cards = document.querySelectorAll('.member-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      
+      const targetBtn = evt ? evt.target : document.querySelector('.filter-btn');
+      if (targetBtn) targetBtn.classList.add('active');
+
+      cards.forEach(card => {
+        if (role === 'all' || card.classList.contains(role)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
