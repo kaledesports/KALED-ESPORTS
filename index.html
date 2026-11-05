@@ -7,97 +7,28 @@
   <title>Kaled Esports - Web Oficial</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    .social-links {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .social-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 9px 13px;
-      border: 1px solid rgba(56,189,248,.35);
-      border-radius: 8px;
-      color: inherit;
-      text-decoration: none;
-      font-weight: 700;
-      transition: .2s;
-    }
-    .social-links a:hover {
-      background: #168bdf;
-      color: #fff;
-      transform: translateY(-2px);
-    }
-    .social-links .social-label {
-      font-size: .9rem;
-    }
-    .jersey-section {
-      padding: 80px 6%;
-      text-align: center;
-      background: linear-gradient(135deg,rgba(10,24,48,.97),rgba(5,12,27,.98));
-      color: #fff;
-    }
-    .jersey-section .jersey-kicker {
-      color: #38bdf8;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-    .jersey-section h2 {
-      font-size: clamp(2rem,5vw,3.2rem);
-      margin: 10px 0;
-    }
-    .jersey-section h2 span {
-      color: #38bdf8;
-    }
-    .jersey-panel {
-      max-width: 760px;
-      margin: 28px auto 0;
-      padding: 34px 26px;
-      border: 1px solid rgba(56,189,248,.35);
-      border-radius: 18px;
-      background: rgba(255,255,255,.045);
-      box-shadow: 0 15px 45px rgba(0,0,0,.2);
-    }
-    .jersey-mark {
-      font-size: 3.5rem;
-      margin-bottom: 12px;
-    }
-    .jersey-panel p {
-      line-height: 1.7;
-      color: #d7e4f4;
-    }
-    .jersey-panel strong {
-      color: #38bdf8;
-    }
-    .jersey-socials {
-      justify-content: center;
-      margin-top: 20px;
-    }
-    @media(max-width:700px) {
-      .nav-container {
-        gap: 14px;
-        flex-wrap: wrap;
-      }
-      .nav-links {
-        order: 3;
-        width: 100%;
-        justify-content: center;
-      }
-      .social-links {
-        justify-content: center;
-      }
-      .jersey-section {
-        padding: 58px 5%;
-      }
-    }
+    .header-socials{display:flex;align-items:center;gap:9px;margin-left:12px}
+    .header-socials a{width:38px;height:38px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(56,189,248,.38);border-radius:50%;color:inherit;text-decoration:none;font-size:18px;font-weight:800;transition:background .2s,border-color .2s,transform .2s}
+    .header-socials a:hover{background:#168bdf;border-color:#38bdf8;color:#fff;transform:translateY(-2px)}
+    .jersey-section{padding:80px 6%;text-align:center;background:linear-gradient(135deg,rgba(10,24,48,.97),rgba(5,12,27,.98));color:#fff}
+    .jersey-section .jersey-kicker{color:#38bdf8;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+    .jersey-section h2{font-size:clamp(2rem,5vw,3.2rem);margin:10px 0}
+    .jersey-section h2 span{color:#38bdf8}
+    .jersey-panel{max-width:760px;margin:28px auto 0;padding:38px 26px;border:1px solid rgba(56,189,248,.35);border-radius:18px;background:rgba(255,255,255,.045);box-shadow:0 15px 45px rgba(0,0,0,.2)}
+    .jersey-mark{font-size:3.5rem;margin-bottom:12px}
+    .jersey-panel p{line-height:1.7;color:#d7e4f4}
+    .jersey-status{display:inline-block;margin:18px 0 8px;padding:11px 25px;border:1px solid #38bdf8;border-radius:6px;color:#38bdf8;font-size:clamp(1.25rem,3vw,1.8rem);font-weight:900;letter-spacing:4px}
+    .contact-section{padding:70px 6%;text-align:center}
+    .contact-section p{max-width:620px;margin:12px auto 24px;line-height:1.7}
+    .contact-links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+    .contact-links a{display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:8px;background:#087fc4;color:#fff;text-decoration:none;font-weight:700;transition:.2s}
+    .contact-links a:hover{background:#075f96;transform:translateY(-2px)}
+    footer{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    @media(max-width:700px){.nav-container{gap:12px;flex-wrap:wrap}.nav-links{order:3;width:100%;justify-content:center}.header-socials{margin-left:auto}.jersey-section{padding:58px 5%}footer{justify-content:center;text-align:center}}
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
   <header>
     <div class="nav-container">
       <div class="logo-group" onclick="filterMembers('all')">
@@ -111,16 +42,16 @@
         <a href="#roster">Roster</a>
         <a href="#jersey">Camiseta</a>
         <a href="#about">Sobre Nosotros</a>
+        <a href="#contact">Contacto</a>
       </div>
 
-      <div class="social-links" aria-label="Redes sociales de Kaled Esports">
-        <a href="https://x.com/KaledEsports" target="_blank" rel="noopener noreferrer">𝕏 <span class="social-label">X</span></a>
-        <a href="https://www.instagram.com/kaledesports" target="_blank" rel="noopener noreferrer">◎ <span class="social-label">Instagram</span></a>
+      <div class="header-socials" aria-label="Redes sociales de Kaled Esports">
+        <a href="https://x.com/KaledEsports" target="_blank" rel="noopener noreferrer" aria-label="X de Kaled Esports" title="X">𝕏</a>
+        <a href="https://www.instagram.com/kaledesports" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Kaled Esports" title="Instagram">◎</a>
       </div>
     </div>
   </header>
 
-  <!-- Hero Banner -->
   <section class="hero">
     <div class="hero-logo">
       <img src="img/kaled.jpg" alt="Kaled Shield" onerror="this.onerror=null; this.src='https://unavatar.io/x/KaledEsports';">
@@ -138,7 +69,6 @@
     </div>
   </section>
 
-  <!-- Roster Section -->
   <section id="roster" class="roster-section">
     <div class="section-header">
       <h2>Integrantes del <span>Equipo</span></h2>
@@ -146,13 +76,10 @@
     </div>
 
     <div class="grid">
-
       <!-- Amanuel -->
       <div class="card player member-card player">
         <div>
-          <div class="card-header">
-            <span class="role-tag tag-player">Player</span>
-          </div>
+          <div class="card-header"><span class="role-tag tag-player">Player</span></div>
           <div class="avatar-box">
             <span class="avatar-initial">A</span>
             <img src="https://unavatar.io/x/amanuel307_" alt="Amanuel" onerror="this.remove();">
@@ -166,9 +93,7 @@
       <!-- Legoshi -->
       <div class="card player member-card player">
         <div>
-          <div class="card-header">
-            <span class="role-tag tag-player">Player</span>
-          </div>
+          <div class="card-header"><span class="role-tag tag-player">Player</span></div>
           <div class="avatar-box">
             <span class="avatar-initial">L</span>
             <img src="https://unavatar.io/x/Ventus_SKN" alt="Legoshi" onerror="this.remove();">
@@ -182,9 +107,7 @@
       <!-- Makoo -->
       <div class="card player member-card player">
         <div>
-          <div class="card-header">
-            <span class="role-tag tag-player">Player</span>
-          </div>
+          <div class="card-header"><span class="role-tag tag-player">Player</span></div>
           <div class="avatar-box">
             <span class="avatar-initial">M</span>
             <img src="https://unavatar.io/x/Makoo_fn" alt="Makoo" onerror="this.remove();">
@@ -198,9 +121,7 @@
       <!-- Ochando -->
       <div class="card player member-card player">
         <div>
-          <div class="card-header">
-            <span class="role-tag tag-player">Player</span>
-          </div>
+          <div class="card-header"><span class="role-tag tag-player">Player</span></div>
           <div class="avatar-box">
             <span class="avatar-initial">O</span>
             <img src="https://unavatar.io/x/ochaando_" alt="Ochando" onerror="this.remove();">
@@ -214,9 +135,7 @@
       <!-- Swaay -->
       <div class="card player member-card player">
         <div>
-          <div class="card-header">
-            <span class="role-tag tag-player">Player</span>
-          </div>
+          <div class="card-header"><span class="role-tag tag-player">Player</span></div>
           <div class="avatar-box">
             <span class="avatar-initial">S</span>
             <img src="https://unavatar.io/x/Swaayfn" alt="Swaay" onerror="this.remove();">
@@ -230,9 +149,7 @@
       <!-- Klonzz -->
       <div class="card creator member-card creator">
         <div>
-          <div class="card-header">
-            <span class="role-tag tag-creator">Creador de Contenido</span>
-          </div>
+          <div class="card-header"><span class="role-tag tag-creator">Creador de Contenido</span></div>
           <div class="avatar-box">
             <span class="avatar-initial" style="color:#f87171">K</span>
             <img src="https://unavatar.io/x/klonzz_" alt="Klonzz" onerror="this.remove();">
@@ -243,12 +160,10 @@
         <a href="https://x.com/klonzz_" target="_blank" rel="noopener noreferrer" class="card-btn">Ver perfil en X</a>
       </div>
 
-      <!-- Pollo (Coach) -->
+      <!-- Pollo -->
       <div class="card coach member-card coach">
         <div>
-          <div class="card-header">
-            <span class="role-tag tag-coach">Coach</span>
-          </div>
+          <div class="card-header"><span class="role-tag tag-coach">Coach</span></div>
           <div class="avatar-box">
             <span class="avatar-initial" style="color:#34d399">P</span>
             <img src="https://unavatar.io/x/CoachPollo7" alt="Pollo" onerror="this.remove();">
@@ -259,12 +174,10 @@
         <a href="https://x.com/CoachPollo7" target="_blank" rel="noopener noreferrer" class="card-btn">Ver perfil en X</a>
       </div>
 
-      <!-- Sammy (CEO) -->
+      <!-- Sammy -->
       <div class="card ceo member-card staff">
         <div>
-          <div class="card-header">
-            <span class="role-tag tag-ceo">CEO</span>
-          </div>
+          <div class="card-header"><span class="role-tag tag-ceo">CEO</span></div>
           <div class="avatar-box">
             <span class="avatar-initial" style="color:#fbbf24">S</span>
             <img src="https://unavatar.io/x/saammyFN" alt="Sammy" onerror="this.remove();">
@@ -275,12 +188,10 @@
         <a href="https://x.com/saammyFN" target="_blank" rel="noopener noreferrer" class="card-btn">Ver perfil en X</a>
       </div>
 
-      <!-- Lukario (Owner) -->
+      <!-- Lukario -->
       <div class="card owner member-card staff">
         <div>
-          <div class="card-header">
-            <span class="role-tag tag-owner">Owner</span>
-          </div>
+          <div class="card-header"><span class="role-tag tag-owner">Owner</span></div>
           <div class="avatar-box">
             <span class="avatar-initial" style="color:#cbd5e1">L</span>
             <img src="https://unavatar.io/x/Luk4rioFn" alt="Lukario" onerror="this.remove();">
@@ -290,41 +201,39 @@
         </div>
         <a href="https://x.com/Luk4rioFn" target="_blank" rel="noopener noreferrer" class="card-btn">Ver perfil en X</a>
       </div>
-
     </div>
   </section>
 
-  <!-- Camiseta Section -->
   <section id="jersey" class="jersey-section">
     <div class="jersey-kicker">Nuestra identidad</div>
     <h2>La camiseta <span>de Kaled</span></h2>
     <div class="jersey-panel">
       <div class="jersey-mark" aria-hidden="true">⚡</div>
       <h3>Una identidad. Un escudo. Un objetivo.</h3>
-      <p>La equipación oficial representa los colores, el espíritu competitivo y el compromiso de todos los que forman parte de Kaled Esports.</p>
+      <div class="jersey-status">PRÓXIMAMENTE</div>
+      <p>Muy pronto os presentaremos la equipación oficial de Kaled Esports.</p>
       <p><strong>NACIMOS PARA DOMINAR.</strong></p>
       <p class="jersey-kicker">#WeAreKaled</p>
     </div>
   </section>
 
-  <!-- About Section -->
   <section id="about" class="about-section">
     <h2>Sobre Kaled Esports</h2>
     <p>Kaled Esports es un club competitivo enfocado en destacar en los torneos más relevantes de Fortnite. Nuestro objetivo es el rendimiento de alto nivel, el trabajo en equipo y la creación de contenido de calidad.</p>
+  </section>
 
-    <div class="social-links jersey-socials">
-      <a href="https://x.com/KaledEsports" target="_blank" rel="noopener noreferrer">𝕏 X / @KaledEsports</a>
-      <a href="https://www.instagram.com/kaledesports" target="_blank" rel="noopener noreferrer">◎ Instagram / @kaledesports</a>
+  <section id="contact" class="contact-section">
+    <h2>Contacto</h2>
+    <p>¿Quieres contactar con Kaled Esports, proponer una colaboración o consultar cualquier asunto? Escríbenos a través de nuestras redes oficiales.</p>
+    <div class="contact-links">
+      <a href="https://x.com/KaledEsports" target="_blank" rel="noopener noreferrer">𝕏&nbsp; Contactar por X</a>
+      <a href="https://www.instagram.com/kaledesports" target="_blank" rel="noopener noreferrer">◎&nbsp; Contactar por Instagram</a>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div>&copy; 2026 Kaled Esports. Todos los derechos reservados.</div>
-    <div class="social-links jersey-socials">
-      <a href="https://x.com/KaledEsports" target="_blank" rel="noopener noreferrer">𝕏 X</a>
-      <a href="https://www.instagram.com/kaledesports" target="_blank" rel="noopener noreferrer">◎ Instagram</a>
-    </div>
+    <div>#WeAreKaled</div>
   </footer>
 
   <script>
@@ -346,6 +255,8 @@
       });
     }
   </script>
+
+
 </body>
 </html>
 
